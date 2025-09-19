@@ -2,7 +2,7 @@
   <artifact type="jar" name="FlowPaneFxml:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/FlowPaneFxml_jar</output-path>
     <root id="archive" name="FlowPaneFxml.jar">
-      <element id="module-output" name="FlowPaneFxml" />
+      <element id="module-output" name="ProyectoGridP" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-graphics/13/javafx-graphics-13-win.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-fxml/13/javafx-fxml-13.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-base/13/javafx-base-13.jar" path-in-jar="/" />

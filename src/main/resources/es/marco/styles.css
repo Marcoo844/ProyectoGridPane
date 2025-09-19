@@ -1,8 +1,22 @@
-.flow-pane-style {
-    -fx-padding: 10;
-    -fx-border-style: solid inside;
+/* --- Label en negrita --- */
+.label-bold {
+    -fx-font-weight: bold;
+}
+
+/* --- TextField con borde azul --- */
+.custom-textfield {
+    -fx-border-color: #0066ff;
     -fx-border-width: 2;
-    -fx-border-insets: 5;
-    -fx-border-radius: 5;
-    -fx-border-color: blue;
+    -fx-border-radius: 3;
+    -fx-background-radius: 3;
+
+    /* color de texto y fondo */
+    -fx-text-fill: black;
+    -fx-background-color: white;
+}
+
+/* Al enfocar el TextField */
+.custom-textfield:focused {
+    -fx-border-color: #0033cc;
+    -fx-border-width: 2;
 }

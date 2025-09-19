@@ -1,59 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.FlowPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<FlowPane alignment="CENTER" hgap="20" prefHeight="120.0" prefWidth="670.0" vgap="10" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1">
-    <children>
-        <!-- Panel de la izquierda -->
-        <FlowPane alignment="CENTER" hgap="5" prefHeight="100" prefWidth="200" styleClass="flow-pane-style" vgap="5">
-            <children>
-                <VBox alignment="CENTER" spacing="10">
-                    <HBox alignment="CENTER" spacing="10">
-                        <Label text="BOTTOM_RIGHT" />
-                        <Button text="Button 1" />
-                    </HBox>
-                    <HBox alignment="CENTER" spacing="10">
-                        <Button text="Button 2" />
-                        <Button text="Button 3" />
-                    </HBox>
-                </VBox>
-            </children>
-        </FlowPane>
+<GridPane xmlns="http://javafx.com/javafx/8"
+          xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="es.marco.Controlador"
+          hgap="5" vgap="5">
 
-        <!-- Panel central -->
-        <FlowPane alignment="CENTER" hgap="5" prefHeight="100" prefWidth="200" styleClass="flow-pane-style" vgap="5">
-            <children>
-                <VBox alignment="CENTER" spacing="10">
-                    <HBox alignment="CENTER" spacing="10">
-                        <Label text="BOTTOM_LEFT" />
-                        <Button text="Button 1" />
-                    </HBox>
-                    <HBox alignment="CENTER" spacing="10">
-                        <Button text="Button 2" />
-                        <Button text="Button 3" />
-                    </HBox>
-                </VBox>
-            </children>
-        </FlowPane>
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
 
-        <!-- Panel de la derecha -->
-        <FlowPane alignment="CENTER" hgap="5" prefHeight="100" prefWidth="200" styleClass="flow-pane-style" vgap="5">
-            <children>
-                <VBox alignment="CENTER" spacing="10">
-                    <HBox alignment="CENTER" spacing="10">
-                        <Label text="CENTER" />
-                        <Button text="Button 1" />
-                    </HBox>
-                    <HBox alignment="CENTER" spacing="10">
-                        <Button text="Button 2" />
-                        <Button text="Button 3" />
-                    </HBox>
-                </VBox>
-            </children>
-        </FlowPane>
-    </children>
-</FlowPane>
+    <!-- Filas -->
+    <rowConstraints>
+        <RowConstraints vgrow="NEVER"/>   <!-- fila 1 -->
+        <RowConstraints vgrow="NEVER"/>   <!-- fila 2 -->
+        <RowConstraints vgrow="ALWAYS"/>  <!-- fila 3 (TextArea crece) -->
+        <RowConstraints vgrow="NEVER"/>   <!-- fila 4 -->
+    </rowConstraints>
+
+    <!-- Columnas -->
+    <columnConstraints>
+        <ColumnConstraints hgrow="ALWAYS" minWidth="200"/> <!-- Col 1 -->
+        <ColumnConstraints hgrow="NEVER" minWidth="80"/>   <!-- Col 2 -->
+    </columnConstraints>
+
+    <!-- Fila 1 -->
+    <HBox spacing="5" GridPane.rowIndex="0" GridPane.columnIndex="0">
+        <Label text="Nombre:" styleClass="label-bold"/>
+        <TextField fx:id="campoNombre" HBox.hgrow="ALWAYS" styleClass="custom-textfield"/>
+    </HBox>
+    <Button text="OK" GridPane.rowIndex="0" GridPane.columnIndex="1"
+            maxWidth="Infinity"
+            onAction="#accionAceptar"/>
+
+    <!-- Fila 2 -->
+    <Label text="Descripción:" GridPane.rowIndex="1" GridPane.columnIndex="0"
+           styleClass="label-bold"/>
+    <Button text="Cancelar" GridPane.rowIndex="1" GridPane.columnIndex="1"
+            maxWidth="Infinity"
+            onAction="#accionCancelar"/>
+
+    <!-- Fila 3 -->
+    <TextArea fx:id="areaTexto"
+              GridPane.rowIndex="2" GridPane.columnIndex="0"
+              GridPane.columnSpan="1"
+              GridPane.vgrow="ALWAYS" GridPane.hgrow="ALWAYS"
+              wrapText="true"
+              editable="false"
+              focusTraversable="false"/>
+
+    <!-- Fila 4 -->
+    <Label text="Estado: Listo" GridPane.rowIndex="3" GridPane.columnIndex="0"
+           GridPane.columnSpan="2"/>
+</GridPane>
